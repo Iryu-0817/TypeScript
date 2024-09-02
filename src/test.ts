@@ -73,30 +73,38 @@ export const test = () => {
   //     role: "admin",
   //   });
 
-  class User {
-    userId: number;
-    name: string;
-    age: number;
-    email: string;
-    isActive: boolean;
+  //   class User {
+  //     userId: number;
+  //     name: string;
+  //     age: number;
+  //     email: string;
+  //     isActive: boolean;
 
-    constructor(
-      userId: number,
-      name: string,
-      age: number,
-      email: string,
-      isActive: boolean
-    ) {
-      this.userId = userId;
-      this.name = name;
-      this.age = age;
-      this.email = email;
-      this.isActive = isActive;
-    }
+  //     constructor(
+  //       userId: number,
+  //       name: string,
+  //       age: number,
+  //       email: string,
+  //       isActive: boolean
+  //     ) {
+  //       this.userId = userId;
+  //       this.name = name;
+  //       this.age = age;
+  //       this.email = email;
+  //       this.isActive = isActive;
+  //     }
 
-    getProfile(): string {
-      return `name: ${this.name}, age: ${this.age}`;
-    }
-  }
-  const user = new User(1, "John Doe", 30, "John@gmail.com", true);
+  //     getProfile(): string {
+  //       return `name: ${this.name}, age: ${this.age}`;
+  //     }
+  //   }
+  //   const user = new User(1, "John Doe", 30, "John@gmail.com", true);
+
+  //   ここでは、型が何かはわからない
+  const foo = <T>(arg: T): T => {
+    return arg;
+  };
+
+  //   よびだすときに型を指定すると、型が決まる
+  foo<string>("Hello World");
 };
