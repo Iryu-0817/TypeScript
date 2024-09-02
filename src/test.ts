@@ -27,7 +27,6 @@ export const test = () => {
   //     return reversedArray;
   //   };
   //   console.log(reverseArray(["a", "b", "c"], true));
-
   //   const user = {
   //     userId: 1,
   //     userName: "John Doe",
@@ -43,11 +42,9 @@ export const test = () => {
   //   //     email: string;
   //   //     isActive: boolean;
   //   //   }
-
   //   //   interface AdminUser extends UserProps {
   //   //     role: "admin";
   //   //   }
-
   //   type UserProps = {
   //     userId: number;
   //     userName: string;
@@ -55,15 +52,12 @@ export const test = () => {
   //     email: string;
   //     isActive: boolean;
   //   };
-
   //   type AdminUser = UserProps & {
   //     role: "admin";
   //   };
-
   //   const createAccount = (user: AdminUser) => {
   //     // 本来はDBに保存する処理をここに書く
   //   };
-
   //   createAccount({
   //     userId: 1,
   //     userName: "John Doe",
@@ -72,14 +66,12 @@ export const test = () => {
   //     isActive: true,
   //     role: "admin",
   //   });
-
   //   class User {
   //     userId: number;
   //     name: string;
   //     age: number;
   //     email: string;
   //     isActive: boolean;
-
   //     constructor(
   //       userId: number,
   //       name: string,
@@ -93,18 +85,15 @@ export const test = () => {
   //       this.email = email;
   //       this.isActive = isActive;
   //     }
-
   //     getProfile(): string {
   //       return `name: ${this.name}, age: ${this.age}`;
   //     }
   //   }
   //   const user = new User(1, "John Doe", 30, "John@gmail.com", true);
-
-  //   ここでは、型が何かはわからない
-  const foo = <T>(arg: T): T => {
-    return arg;
-  };
-
-  //   よびだすときに型を指定すると、型が決まる
-  foo<string>("Hello World");
+  //   //   ここでは、型が何かはわからない
+  //   const foo = <T>(arg: T): T => {
+  //     return arg;
+  //   };
+  //   //   よびだすときに型を指定すると、型が決まる
+  //   foo<string>("Hello World");
 };
