@@ -44,7 +44,11 @@ export const test = () => {
     isActive: boolean;
   }
 
-  const createAccount = (user: UserProps) => {
+  interface AdminUser extends UserProps {
+    role: "admin";
+  }
+
+  const createAccount = (user: AdminUser) => {
     // 本来はDBに保存する処理をここに書く
   };
 
@@ -54,5 +58,6 @@ export const test = () => {
     age: 30,
     email: "email@gmial.com",
     isActive: true,
+    role: "admin",
   });
 };
