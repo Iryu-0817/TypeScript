@@ -28,48 +28,75 @@ export const test = () => {
   //   };
   //   console.log(reverseArray(["a", "b", "c"], true));
 
-  const user = {
-    userId: 1,
-    userName: "John Doe",
-    age: 30,
-    email: "email@gmial.com",
-    isActive: true,
-  };
-  // オブジェクトの型を定義する
-  //   interface UserProps {
+  //   const user = {
+  //     userId: 1,
+  //     userName: "John Doe",
+  //     age: 30,
+  //     email: "email@gmial.com",
+  //     isActive: true,
+  //   };
+  //   // オブジェクトの型を定義する
+  //   //   interface UserProps {
+  //   //     userId: number;
+  //   //     userName: string;
+  //   //     age: number;
+  //   //     email: string;
+  //   //     isActive: boolean;
+  //   //   }
+
+  //   //   interface AdminUser extends UserProps {
+  //   //     role: "admin";
+  //   //   }
+
+  //   type UserProps = {
   //     userId: number;
   //     userName: string;
   //     age: number;
   //     email: string;
   //     isActive: boolean;
-  //   }
+  //   };
 
-  //   interface AdminUser extends UserProps {
+  //   type AdminUser = UserProps & {
   //     role: "admin";
-  //   }
+  //   };
 
-  type UserProps = {
+  //   const createAccount = (user: AdminUser) => {
+  //     // 本来はDBに保存する処理をここに書く
+  //   };
+
+  //   createAccount({
+  //     userId: 1,
+  //     userName: "John Doe",
+  //     age: 30,
+  //     email: "email@gmial.com",
+  //     isActive: true,
+  //     role: "admin",
+  //   });
+
+  class User {
     userId: number;
-    userName: string;
+    name: string;
     age: number;
     email: string;
     isActive: boolean;
-  };
 
-  type AdminUser = UserProps & {
-    role: "admin";
-  };
+    constructor(
+      userId: number,
+      name: string,
+      age: number,
+      email: string,
+      isActive: boolean
+    ) {
+      this.userId = userId;
+      this.name = name;
+      this.age = age;
+      this.email = email;
+      this.isActive = isActive;
+    }
 
-  const createAccount = (user: AdminUser) => {
-    // 本来はDBに保存する処理をここに書く
-  };
-
-  createAccount({
-    userId: 1,
-    userName: "John Doe",
-    age: 30,
-    email: "email@gmial.com",
-    isActive: true,
-    role: "admin",
-  });
+    getProfile(): string {
+      return `name: ${this.name}, age: ${this.age}`;
+    }
+  }
+  const user = new User(1, "John Doe", 30, "John@gmail.com", true);
 };
