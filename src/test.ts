@@ -36,17 +36,29 @@ export const test = () => {
     isActive: true,
   };
   // オブジェクトの型を定義する
-  interface UserProps {
+  //   interface UserProps {
+  //     userId: number;
+  //     userName: string;
+  //     age: number;
+  //     email: string;
+  //     isActive: boolean;
+  //   }
+
+  //   interface AdminUser extends UserProps {
+  //     role: "admin";
+  //   }
+
+  type UserProps = {
     userId: number;
     userName: string;
     age: number;
     email: string;
     isActive: boolean;
-  }
+  };
 
-  interface AdminUser extends UserProps {
+  type AdminUser = UserProps & {
     role: "admin";
-  }
+  };
 
   const createAccount = (user: AdminUser) => {
     // 本来はDBに保存する処理をここに書く
